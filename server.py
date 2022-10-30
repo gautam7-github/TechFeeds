@@ -1,3 +1,4 @@
+import requests
 from flask import Flask, render_template
 
 from parsers import techcrunch, verge, wired
@@ -17,9 +18,13 @@ def index():
 @app.before_first_request
 def runParsers():
     global vergeContent, techcrunchContent, wiredContent
-    vergeContent = verge.parse()
-    techcrunchContent = techcrunch.parse()
-    wiredContent = wired.parse()
+    try:
+        vergeContent = verge.parse()
+        techcrunchContent = techcrunch.parse()
+        wiredContent = wired.parse()
+    except requests.exceptions.ConnectionError as e:
+        print("Connection Error")
+        print(e)
 
 
 @app.route("/technology", methods=["GET"])
@@ -33,4 +38,4 @@ def techfeed():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
