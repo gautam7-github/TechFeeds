@@ -5,6 +5,14 @@ Supports
 - Tech Crunch
 - Verge
 - Wired
+- Gizmodo
+
+Upcoming Partnerships 🔥
+- BBC Tech
+- NY Times Tech
+- How to Geek
+- Digital Trends
+- Business Insider
 
 Choose from the exclusive providers or go random!
 

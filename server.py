@@ -5,14 +5,15 @@ import random
 import requests
 from flask import Flask, render_template
 
-from parsers import techcrunch, verge, wired
+from parsers import gizmodo, techcrunch, verge, wired
 
 app = Flask(__name__)
 
 store = {
     'Verge': None,
     'Tech-Crunch': None,
-    'Wired': None
+    'Wired': None,
+    'Gizmodo': None
 }
 
 
@@ -28,9 +29,11 @@ def runParsers():
         vergeContent = verge.parse()
         techcrunchContent = techcrunch.parse()
         wiredContent = wired.parse()
+        gizmodoContent = gizmodo.parse()
         store['Tech-Crunch'] = techcrunchContent
         store['Verge'] = vergeContent
         store['Wired'] = wiredContent
+        store['Gizmodo'] = gizmodoContent
     except requests.exceptions.ConnectionError as e:
         print("Connection Error")
         print(e)
