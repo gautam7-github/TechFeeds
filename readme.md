@@ -1,4 +1,4 @@
-# TechFeeds (UNDER CONSTRUCTION)
+# TechFeeds
 An online minimal tech news aggregator to keep you updated on all the latest happenings in tech world.
 
 Supports
@@ -6,6 +6,9 @@ Supports
 - Verge
 - Wired
 
+Choose from the exclusive providers or go random!
+
 Screenshots
 ![1](screenshots/1.jpg)
 ![2](screenshots/2.jpg)
+![2](screenshots/3.jpg)

@@ -9,52 +9,41 @@
     scroll-behavior: smooth;
 }
 body {
-    background: linear-gradient(230deg, #30cfd0, #330867);
+  background-image: linear-gradient(-162deg, #30cfd0 0%, #330867 100%);
     background-size: 400% 400%;
     font-family: 'Montserrat', sans-serif;
-    -webkit-animation: AnimationName 4s ease infinite;
-    -moz-animation: AnimationName 4s ease infinite;
-    animation: AnimationName 4s ease infinite;
+    -webkit-animation: Mover 10s ease infinite;
+    -moz-animation: Mover 10s ease infinite;
+    animation: Mover 10s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes Mover {
     0%{background-position:0% 87%}
     50%{background-position:100% 14%}
     100%{background-position:0% 87%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes Mover {
     0%{background-position:0% 87%}
     50%{background-position:100% 14%}
     100%{background-position:0% 87%}
 }
-@keyframes AnimationName {
+@keyframes Mover {
     0%{background-position:0% 87%}
     50%{background-position:100% 14%}
     100%{background-position:0% 87%}
 }
 
-.card{
-    background-image: linear-gradient(-167deg, #ebc0fd 0%, #d9ded8 100%);
-}
 .btn{
-    background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
-    color: black;
+  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+  color: black;
+  padding: auto;
+  margin: 10%;
 }
-.card:hover{
-    z-index: 10;
+.branding{
+  font-size: xx-large;
+  color: white;
+  font-weight: bolder;
 }
-.btn:hover{
-    color: black;
-    scale: 1.2;
-}
-
-.provider{
-    font-size: xx-large;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -74,7 +63,3 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-
-.card-subtitle{
-    font-family: 'Playfair Display', serif;
-}
