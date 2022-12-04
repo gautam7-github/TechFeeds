@@ -11,6 +11,7 @@ def parse():
 
     htmls = []
     for x in tree['feed']['entry']:
+        x['link'] = x['link']['@href']
         htmls.append(x)
 
     return htmls
