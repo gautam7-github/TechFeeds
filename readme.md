@@ -6,11 +6,10 @@ Supports
 - Verge
 - Wired
 - Gizmodo
-
-Upcoming Partnerships 🔥
-- BBC Tech
 - NY Times Tech
 - How to Geek
+  
+Upcoming Partnerships 🔥
 - Digital Trends
 - Business Insider
 

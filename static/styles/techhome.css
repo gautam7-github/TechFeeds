@@ -33,17 +33,22 @@ body {
     100%{background-position:0% 87%}
 }
 .buttons{
+    padding-top: 20vh;
   display: inline-grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto; 
-  column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto; 
+  column-gap: 2rem;
   row-gap: 15px;
 }
 .btn{
   background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
   color: black;
-  padding: auto;
-  margin: 3%;
+  padding: 5%;
+    width: 20vmax;
+  margin: 1%;
+}
+.disabled{
+    color: red
 }
 .branding{
   font-size: xx-large;

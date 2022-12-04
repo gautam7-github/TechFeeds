@@ -1,11 +1,10 @@
 
-
 import random
 
 import requests
 from flask import Flask, render_template
 
-from parsers import gizmodo, techcrunch, verge, wired
+from parsers import gizmodo, howtogeek, nytech, techcrunch, verge, wired
 
 app = Flask(__name__)
 
@@ -13,7 +12,9 @@ store = {
     'Verge': None,
     'Tech-Crunch': None,
     'Wired': None,
-    'Gizmodo': None
+    'Gizmodo': None,
+    'NY-Tech': None,
+    'HowToGeek': None
 }
 
 
@@ -30,10 +31,14 @@ def runParsers():
         techcrunchContent = techcrunch.parse()
         wiredContent = wired.parse()
         gizmodoContent = gizmodo.parse()
+        nytechContent = nytech.parse()
+        howtogeekContent = howtogeek.parse()
         store['Tech-Crunch'] = techcrunchContent
         store['Verge'] = vergeContent
         store['Wired'] = wiredContent
         store['Gizmodo'] = gizmodoContent
+        store["NY-Tech"] = nytechContent
+        store["HowToGeek"] = howtogeekContent
     except requests.exceptions.ConnectionError as e:
         print("Connection Error")
         print(e)
@@ -41,7 +46,6 @@ def runParsers():
 
 @app.route("/technology", methods=['GET'])
 def technology():
-    # provider = choice(list(store.keys()))
     return render_template(
         "techfeed-home.html",
     )
@@ -49,7 +53,6 @@ def technology():
 
 @app.route("/technology/<provider>", methods=["GET"])
 def techfeedforProvider(provider: str):
-    # provider = provider.capitalize()
     if provider in store:
         return render_template(
             "techfeed.html",
@@ -62,7 +65,6 @@ def techfeedforProvider(provider: str):
 def techfeedforAll():
     allProviders = list(store.values())
     allProviders = random.shuffle(allProviders)
-    # print(allProviders)
     return render_template(
         "techfeed-all.html",
         mainContent=allProviders
